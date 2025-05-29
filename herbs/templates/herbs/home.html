@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Herbal Remedy Finder</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            background-image: url('https://img.freepik.com/premium-photo/different-herbs-white-background_185193-19631.jpg?w=2000');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #ffffff;
+        }
+
+        nav {
+            margin-bottom: 30px;
+        }
+
+        .blue-text {
+            color: blue;
+            font-weight: bold;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px;
+            background-color: rgba(0, 128, 0, 0.7);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        a.button:hover {
+            background-color: rgba(0, 100, 0, 0.7);
+        }
+
+        h1 {
+            background-color: rgba(0, 100, 0, 0.7);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🌿 Herbal Remedy Finder 🌿</h1>
+
+    <nav>
+        <a href="{% url 'herb_list' %}" class="button">View All Herbs</a>
+        <a href="/admin/" class="button">Admin Panel</a>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+</body>
+</html>
+

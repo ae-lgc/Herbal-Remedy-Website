@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ herb.local_name }} - Herb Details</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.pinimg.com/originals/7c/b1/86/7cb18679659f791b1191bea97b74dfc0.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            padding: 20px;
+        }
+
+        a {
+            color: #aaffaa;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        p {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 600px;
+        }
+
+        h1 {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ herb.local_name }} ({{ herb.english_name }})</h1>
+
+    {% if herb.image %}
+    <img src="{{ herb.image.url }}" alt="{{ herb.local_name }}" style="width:100%; max-width:400px; height:auto; border-radius:10px;">
+    {% endif %}
+
+    <p><strong>Scientific Name:</strong> {{ herb.scientific_name }}</p>
+    <p><strong>Common Use:</strong> {{ herb.common_use }}</p>
+    <p><strong>Preparation:</strong> {{ herb.preparation }}</p>
+    <p><strong>Precautions:</strong> {{ herb.precautions }}</p>
+    <p><strong>Location:</strong> {{ herb.location }}</p>
+
+    <a href="/herbs/">Back to the herb list</a>
+</body>
+</html>

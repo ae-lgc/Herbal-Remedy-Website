@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Herbal Remedy Finder</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.wallpaperbetter.com/wallpaper/261/93/274/fresh-mint-leaves-1080P-wallpaper.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-top: 1em;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-top: 1em;
+        }
+
+        .search-container input[type="text"] {
+            padding: 0.5em;
+            width: 250px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .search-container button {
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #66bb6a;
+            color: white;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 2em auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        a {
+            color: #b3ffb3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Local Herbal Remedies</h1>
+
+    <!-- 🔍 Search Box -->
+    <div class="search-container">
+        <form method="get" action="/herbs/">
+            <input type="text" name="q" placeholder="Search names & uses" value="{{ request.GET.q }}">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <h2>Herb List</h2>
+    <ul>
+        {% for herb in herbs %}
+            <li>
+                <a href="{% url 'herb_detail' herb.pk %}">{{ herb.local_name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+    <!-- 🏠 Back to Home Button -->
+    <div style="text-align: center; margin-bottom: 2em;">
+       <a href="/" style="
+            display: inline-block;
+            padding: 0.5em 1.5em;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        ">🏠 Back to Home</a>
+    </div>
+</body>
+</html>
+
