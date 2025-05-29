@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ikm^nr_k%wf5e^9y1vsxfu148sj$i-b)(89tp+++v3f@2_7&=h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['herbal-remedy-website.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
